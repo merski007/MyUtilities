@@ -14,8 +14,13 @@ import static java.time.temporal.ChronoUnit.MONTHS;
 import java.util.Calendar;
 
 /**
- *
- * @author mjmersenski
+ * A utility class that represents commonly used Date/Time methods for the
+ * JDK 8 API.
+ * 
+ * @author Mark J. Mersenski, mmersenski@my.wctc.edu
+ * @version 1.00
+ * @since 1.8
+ * 
  */
 public class DateUtilities {
 
