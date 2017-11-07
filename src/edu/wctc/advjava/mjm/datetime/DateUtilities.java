@@ -25,7 +25,8 @@ import java.util.Calendar;
 public class DateUtilities {
 
     /**
-     * Format a <code>LocalDateTime</code> to a month/day/year hour:minute format (mm/dd/yyyy HH:mm)
+     * Format a <code>LocalDateTime</code> object to a month/day/year hour:minute 
+     * format (mm/dd/yyyy HH:mm)<br>
      *
      * @param date a <code>LocalDateTime</code> object
      * @return a date formatted to month/day/year hour:minute (mm/dd/yyyy HH:mm)
@@ -37,11 +38,12 @@ public class DateUtilities {
         }
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");
         return date.format(formatter);
-        // add an exception
     }
 
     /**
-     * Format a <code>LocalDateTime</code> object according to a specified format
+     * Format a <code>LocalDateTime</code> object according to a specified format.
+     * For example, you can put a <code>LocalDateTime</code> object in the format
+     * of 'yyyy/MM/dd' or 'HH:mm' or 'MM-dd HH:mm'.<br>
      *
      * @param date a <code>LocalDateTime</code> object
      * @param pattern a String with the specified date & time pattern
@@ -60,7 +62,9 @@ public class DateUtilities {
     /**
      * Attempts to convert a String representation of a date & time to a
      * <code>LocalDateTime<code> object. Conversion rules are based on parse
-     * definitions in the java.​time.​format.​DateTimeFormatter class.
+     * definitions in the java.​time.​format.​DateTimeFormatter class.<br>
+     * <br>
+     * Format has to be this way: 'yyyy-MM-ddTHH:mm:ss'<br>
      *
      * @param dateString a string representation of a date
      * @return a <code>LocalDateTime<code> object
@@ -77,8 +81,8 @@ public class DateUtilities {
     }
 
      /**
-     * Attempts to convert a String representation of a date to a
-     * <code>LocalDateTime<code> object by with any pattern specified. 
+     * Attempts to convert a String representation of a date & time to a
+     * <code>LocalDateTime<code> object by any pattern specified. 
      * Conversion rules are based on parse definitions in the 
      * java.​time.​format.​DateTimeFormatter class.
      *
@@ -138,8 +142,9 @@ public class DateUtilities {
         DateUtilities mjm = new DateUtilities();
 
 //        // toString test - outputs a formatted string MM/dd/yyyy
-        LocalDateTime today = LocalDateTime.now();
-        System.out.println(mjm.toString(today));
+//        LocalDateTime today = LocalDateTime.now();
+////        System.out.println(mjm.toString(today));
+//        System.out.println(today);
 
 //        // toString test - takes a date and format as parameters and returns specified format
 //        LocalDateTime today = LocalDateTime.now();
