@@ -5,12 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import static java.time.temporal.ChronoUnit.SECONDS;
-import static java.time.temporal.ChronoUnit.MINUTES;
-import static java.time.temporal.ChronoUnit.HOURS;
-import static java.time.temporal.ChronoUnit.DAYS;
-import static java.time.temporal.ChronoUnit.WEEKS;
-import static java.time.temporal.ChronoUnit.MONTHS;
+import static java.time.temporal.ChronoUnit.*;
 import java.util.Calendar;
 
 /**
@@ -32,7 +27,7 @@ public class DateUtilities {
      * @return a date formatted to month/day/year hour:minute (mm/dd/yyyy HH:mm)
      * @throws IllegalArgumentException if date is null
      */
-    public final String toString(LocalDateTime date) throws IllegalArgumentException {
+    public final String localDateTimeToString(LocalDateTime date) throws IllegalArgumentException {
         if (date == null) {
             throw new IllegalArgumentException("Error: date argument cannot be null");
         }
@@ -51,7 +46,7 @@ public class DateUtilities {
      * @throws IllegalArgumentException if pattern is not recognized and/or date
      * is null
      */
-    public final String toString(LocalDateTime date, String pattern) throws IllegalArgumentException {
+    public final String localDateTimeToString(LocalDateTime date, String pattern) throws IllegalArgumentException {
         if (date == null) {
             throw new IllegalArgumentException("Error: date argument cannot be null");
         }
@@ -71,7 +66,7 @@ public class DateUtilities {
      * @throws IllegalArgumentException if the date string cannot be parsed
      * and/or if the string object is null or empty.
      */
-    public final LocalDateTime toDateTime(String dateString) throws IllegalArgumentException {
+    public final LocalDateTime stringToLocalDateTime(String dateString) throws IllegalArgumentException {
         if (dateString == null || dateString.isEmpty()) {
             throw new IllegalArgumentException("Error: dateString argument cannot be null or empty");
         }
@@ -92,7 +87,7 @@ public class DateUtilities {
      * @throws IllegalArgumentException if the date string cannot be parsed
      * and/or if the string object is null or empty.
      */
-    public final LocalDateTime toDateTime(String dateString, String pattern) throws IllegalArgumentException {
+    public final LocalDateTime stringToLocalDateTime(String dateString, String pattern) throws IllegalArgumentException {
         if (dateString == null || dateString.isEmpty()) {
             throw new IllegalArgumentException("Error: dateString argument cannot be null or empty");
         }
@@ -106,14 +101,6 @@ public class DateUtilities {
      * Attempts to perform a calculation between two LocalDateTime objects by
      * using a specified ChronoUnit and returns a long object.<br>
      * <br>
-     * supported ChronoUnits are:<br>
-     * SECONDS<br>
-     * MINUTES<br>
-     * HOURS<br>
-     * DAYS<br>
-     * WEEKS<br>
-     * MONTHS<br>
-     * <br>
      * all other values will throw an exception. calculation will take endDate and
      * subtract startDate to return long value.<br>
      * @param startDate the starting LocalDateTime object for calculation
@@ -122,7 +109,7 @@ public class DateUtilities {
      * @return a long object
      * @throws IllegalArgumentException if any objects are null.
      */
-    public final long getDateDiff(LocalDateTime startDate, LocalDateTime endDate, ChronoUnit unit)
+    public final long getLocalDateTimeDiff(LocalDateTime startDate, LocalDateTime endDate, ChronoUnit unit)
     throws IllegalArgumentException{
         if (startDate == null) {
             throw new IllegalArgumentException("Error: startDate cannot be null");
