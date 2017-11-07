@@ -43,8 +43,8 @@ public class DateUtilities {
      * @param date a LocalDateTime object
      * @param pattern a String with the specified date and time pattern
      * @return a date and/or time format according to the specified pattern
-     * @throws IllegalArgumentException if pattern is not recognized and/or date
-     * is null
+     * @throws IllegalArgumentException if LocalDateTime object is null
+     * @throws DateTimeException if pattern is not valid
      */
     public final String localDateTimeToString(LocalDateTime date, String pattern) throws IllegalArgumentException {
         if (date == null) {
@@ -67,8 +67,8 @@ public class DateUtilities {
      *
      * @param dateString a string representation of a date
      * @return a LocalDateTime object
-     * @throws IllegalArgumentException if the date string cannot be parsed
-     * and/or if the string object is null or empty.
+     * @throws IllegalArgumentException if the date string object is null or empty.
+     * @throws DateTimeException if dateString cannot be parsed
      */
     public final LocalDateTime stringToLocalDateTime(String dateString) throws IllegalArgumentException {
         if (dateString == null || dateString.isEmpty()) {
@@ -89,8 +89,8 @@ public class DateUtilities {
      * @param dateString a string representation of a date and time
      * @param pattern a String with the specified date and time pattern
      * @return a LocalDateTime object
-     * @throws IllegalArgumentException if the date string cannot be parsed
-     * and/or if the string object is null or empty.
+     * @throws IllegalArgumentException if the date string object is null or empty.
+     * @throws DateTimeException if dateString cannot be parsed
      */
     public final LocalDateTime stringToLocalDateTime(String dateString, String pattern) throws IllegalArgumentException {
         if (dateString == null || dateString.isEmpty()) {
@@ -112,7 +112,7 @@ public class DateUtilities {
      * @param endDate the ending LocalDateTime object for calculation
      * @param unit must be a supported ChronoUnit from list above
      * @return a long object
-     * @throws IllegalArgumentException if any objects are null.
+     * @throws IllegalArgumentException if any object is null.
      */
     public final long getLocalDateTimeDiff(LocalDateTime startDate, LocalDateTime endDate, ChronoUnit unit)
     throws IllegalArgumentException{
