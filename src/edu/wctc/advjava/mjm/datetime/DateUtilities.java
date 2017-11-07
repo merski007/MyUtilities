@@ -60,8 +60,10 @@ public class DateUtilities {
      * definitions in the java.​time.​format.​DateTimeFormatter class.<br>
      * <br>
      * There are 2 acceptable formats:<br>
-     * <li>yyyy-MM-ddTHH:mm</li><br>
-     * <li>yyyy-MM-ddTHH:mm:ss</li><br>
+     * <ul>
+     * <li>yyyy-MM-ddTHH:mm</li>
+     * <li>yyyy-MM-ddTHH:mm:ss</li>
+     * </ul>
      *
      * @param dateString a string representation of a date
      * @return a LocalDateTime object
