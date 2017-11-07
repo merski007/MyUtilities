@@ -59,7 +59,9 @@ public class DateUtilities {
      * LocalDateTime object. Conversion rules are based on parse
      * definitions in the java.​time.​format.​DateTimeFormatter class.<br>
      * <br>
-     * Format has to be this way: 'yyyy-MM-ddTHH:mm:ss'<br>
+     * There are 2 acceptable formats:<br>
+     * <li>yyyy-MM-ddTHH:mm</li><br>
+     * <li>yyyy-MM-ddTHH:mm:ss</li><br>
      *
      * @param dateString a string representation of a date
      * @return a LocalDateTime object
@@ -74,6 +76,7 @@ public class DateUtilities {
         LocalDateTime date = LocalDateTime.parse(dateString);
         return date;
     }
+    
 
      /**
      * Attempts to convert a String representation of a date and time to a
