@@ -38,7 +38,7 @@ public class DateUtilities {
     /**
      * Format a LocalDateTime object according to a specified format.
      * For example, you can put a LocalDateTime object in the format
-     * of 'yyyy/MM/dd' or 'HH:mm' or 'MM-dd HH:mm'.<br>
+     * of 'yyyy/MM/dd' or 'HH:mm' or 'MM-dd HH:mm', etc...<br>
      *
      * @param date a LocalDateTime object
      * @param pattern a String with the specified date and time pattern
