@@ -41,7 +41,8 @@ public class DateUtilities {
      * of 'yyyy/MM/dd' or 'HH:mm' or 'MM-dd HH:mm', etc...<br>
      *
      * @param date a LocalDateTime object
-     * @param pattern a String with the specified date and time pattern
+     * @param pattern a String with the specified date and time pattern that follows
+     * the DateTimeFormatter format
      * @return a date and/or time format according to the specified pattern
      * @throws IllegalArgumentException if LocalDateTime object is null 
      * and/or a DateTimeException if dateString cannot be parsed
@@ -87,7 +88,8 @@ public class DateUtilities {
      * java.​time.​format.​DateTimeFormatter class.
      *
      * @param dateString a string representation of a date and time
-     * @param pattern a String with the specified date and time pattern
+     * @param pattern a String with the specified date and time pattern that follows
+     * the DateTimeFormatter format
      * @return a LocalDateTime object
      * @throws IllegalArgumentException if the date string object is null or empty and/or a 
      * DateTimeException if dateString cannot be parsed
